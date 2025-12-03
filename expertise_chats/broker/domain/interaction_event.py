@@ -4,3 +4,4 @@ class InteractionEvent(BaseEvent):
     user_id: str
     company_id: str
     agent_id: str
+    voice: bool = False
