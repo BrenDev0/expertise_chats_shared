@@ -5,3 +5,4 @@ class InteractionEvent(BaseEvent):
     company_id: str
     agent_id: str
     voice: bool = False
+    turn_complete: bool = False
