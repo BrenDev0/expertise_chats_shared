@@ -22,7 +22,7 @@ def handle_error(
         data=error.model_dump()
     )
 
-    event.event_data = ws_payload
+    event.event_data = ws_payload.model_dump()
 
     producer.publish(
         routing_key="streaming.general.outbound.send",
