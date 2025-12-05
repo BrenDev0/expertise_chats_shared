@@ -1,6 +1,6 @@
 from  expertise_chats.broker.domain.interaction_event import InteractionEvent
 from expertise_chats.schemas.ws import WsPayload
-from expertise_chats.broker.infrastructure.rabbitMq.producer import RabbitMqProducer as Producer
+from expertise_chats.broker.domain.producer import Producer
 
 class EndAudioStream:
     def __init__(
