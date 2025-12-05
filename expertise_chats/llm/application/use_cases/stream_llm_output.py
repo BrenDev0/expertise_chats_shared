@@ -13,7 +13,7 @@ class StreamLlmOutput:
         end_audio_stream: EndAudioStream,
         producer: Producer
     ):
-        self.__llm_service = llm_service,
+        self.__llm_service = llm_service
         self.__chunk_handler = chunk_hander
         self.__end_audio_stream = end_audio_stream
         self.__producer = producer
@@ -51,5 +51,5 @@ class StreamLlmOutput:
                 "llm_response": "".join(chunks)
             }
         )
-        
+
         return "".join(chunks)
