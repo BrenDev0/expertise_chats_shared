@@ -14,7 +14,6 @@ from expertise_chats.llm.domain.repositories.vector_repository import VectorRepo
 from expertise_chats.llm.domain.entities import Message 
 from expertise_chats.llm.domain.services.embedding_service import EmbeddingService as EmbeddingServiceAbstract
 from expertise_chats.llm.domain.services.llm_service import LlmService as LlmServiceAbstract
-from expertise_chats.llm.domain.
 
 __all__ = [
    "LlmService",
