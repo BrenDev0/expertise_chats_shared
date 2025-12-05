@@ -11,7 +11,7 @@ from expertise_chats.llm.application.use_cases.handle_chunk import HandleChunk
 from expertise_chats.llm.application.use_cases.end_audio_stream import EndAudioStream
 from expertise_chats.llm.application.use_cases.stream_llm_output import StreamLlmOutput
 from expertise_chats.llm.domain.repositories.vector_repository import VectorRepository as VectorRepositoryAbstract
-from expertise_chats.llm.domain.entities import Message 
+from expertise_chats.llm.domain.entities import Message as MessageModel
 from expertise_chats.llm.domain.services.embedding_service import EmbeddingService as EmbeddingServiceAbstract
 from expertise_chats.llm.domain.services.llm_service import LlmService as LlmServiceAbstract
 from expertise_chats.llm.application.use_cases.search_for_context import SearchForContext
@@ -29,5 +29,6 @@ __all__ = [
    "EmbeddingServiceAbstract",
    "LlmServiceAbstract",
    "SearchForContext",
-   "PromptService"
+   "PromptService",
+   "MessageModel"
 ]
