@@ -15,6 +15,7 @@ from expertise_chats.llm.domain.entities import Message
 from expertise_chats.llm.domain.services.embedding_service import EmbeddingService as EmbeddingServiceAbstract
 from expertise_chats.llm.domain.services.llm_service import LlmService as LlmServiceAbstract
 from expertise_chats.llm.application.use_cases.search_for_context import SearchForContext
+from expertise_chats.llm.application.services.prompt_service import PromptService
 
 __all__ = [
    "LlmService",
@@ -27,5 +28,6 @@ __all__ = [
    "VectorRepositoryAbstract",
    "EmbeddingServiceAbstract",
    "LlmServiceAbstract",
-   "SearchForContext"
+   "SearchForContext",
+   "PromptService"
 ]
