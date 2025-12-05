@@ -12,7 +12,7 @@ class HandleChunk:
 
     def execute(
         self,
-        sentance: str,
+        sentence: str,
         chunk: str,
         event: InteractionEvent
     ):
@@ -46,3 +46,4 @@ class HandleChunk:
                 routing_key=f"streaming.general.outbound.send",
                 event_message=event
             )
+            return ""
