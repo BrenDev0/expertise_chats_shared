@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 from uuid import UUID
+from expertise_chats.llm.domain.entities import Message as MessageModel
 
 class InteractionRequest(BaseModel):
     input: str
@@ -13,3 +14,7 @@ class InteractionRequest(BaseModel):
 class LlmResponse(BaseModel):
     response: str
     data: Optional[Any] = None
+
+
+class IncommingMessageEvent(BaseModel):
+    chat_history: List[MessageModel]
