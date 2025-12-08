@@ -17,4 +17,3 @@ class LlmResponse(BaseModel):
 
 class LlmMessageEvent(BaseModel):
     chat_history: List[Message]
-    message_id: str
