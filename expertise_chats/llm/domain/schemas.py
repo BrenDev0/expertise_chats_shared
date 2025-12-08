@@ -15,6 +15,6 @@ class LlmResponse(BaseModel):
     response: str
     data: Optional[Any] = None
 
-
-class IncommingMessageEvent(BaseModel):
+class LlmMessageEvent(BaseModel):
     chat_history: List[Message]
+    message_id: str

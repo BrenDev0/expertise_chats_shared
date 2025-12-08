@@ -16,6 +16,7 @@ from expertise_chats.llm.domain.services.embedding_service import EmbeddingServi
 from expertise_chats.llm.domain.services.llm_service import LlmService as LlmServiceAbstract
 from expertise_chats.llm.application.use_cases.search_for_context import SearchForContext
 from expertise_chats.llm.application.services.prompt_service import PromptService
+from expertise_chats.llm.domain.schemas import LlmMessageEvent, InteractionRequest, LlmResponse
 
 __all__ = [
    "LlmService",
@@ -30,5 +31,8 @@ __all__ = [
    "LlmServiceAbstract",
    "SearchForContext",
    "PromptService",
-   "MessageModel"
+   "MessageModel",
+   "InteractionRequest",
+   "LlmResponse",
+   "LlmMessageEvent"
 ]
