@@ -9,10 +9,10 @@ class RabbitMqConnection:
     @classmethod
     def get_connection(cls):
         # Retrieve environment variables and raise ValueError if any are missing
-        host = os.getenv("EXPERTISE_CHATS_BROKER_HOST")
-        port = os.getenv("EXPERTISE_CHATS_BROKER_PORT")
-        user = os.getenv("EXPERTISE_CHATS_BROKER_USER")
-        password = os.getenv("EXPERTISE_CHATS_BROKER_PASSWORD")
+        host = os.getenv("EXPERTISE_CHATS_BROKER_HOST", "rabitmq")
+        port = os.getenv("EXPERTISE_CHATS_BROKER_PORT", "5672")
+        user = os.getenv("EXPERTISE_CHATS_BROKER_USER", "guest")
+        password = os.getenv("EXPERTISE_CHATS_BROKER_PASSWORD",  "guest")
 
         if not host:
             raise ValueError("Environment variable 'EXPERTISE_CHATS_BROKER_HOST' is not set.")
