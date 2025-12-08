@@ -3,8 +3,11 @@ Message schema package for expertise_chats.
 """
 
 from expertise_chats.schemas.ws import WsPayload, RequestErrorBase
+from expertise_chats.schemas.llm import InteractionRequest, LlmResponse
 
 __all__ = [
    "WsPayload",
-   "RequestErrorBase"
+   "RequestErrorBase",
+   "InteractionRequest",
+   "LlmResponse"
 ]
