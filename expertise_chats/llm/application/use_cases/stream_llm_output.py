@@ -31,7 +31,7 @@ class StreamLlmOutput:
             sentence = self.__chunk_handler.execute(
                 sentence=sentence,
                 chunk=chunk,
-                event=event
+                event=event.copy_model()
             )
 
         # After streaming all chunks, send any remaining text for voice
