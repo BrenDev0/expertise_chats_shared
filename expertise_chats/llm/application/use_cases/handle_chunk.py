@@ -17,9 +17,9 @@ class HandleChunk:
         chunk: str,
         event: InteractionEvent
     ):
+        event_data = LlmMessageEvent(**event.event_data)
+        message_id = event_data.chat_history[0].message_id
         if event.voice:
-            event_data = LlmMessageEvent(**event.event_data)
-            message_id = event_data.chat_history[0].message_id
             sentence += chunk
             # Check for sentence-ending punctuation
             if any(p in chunk for p in [".", "?", "!"]) and len(sentence) > 10:
