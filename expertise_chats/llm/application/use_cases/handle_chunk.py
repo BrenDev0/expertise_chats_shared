@@ -17,13 +17,16 @@ class HandleChunk:
         chunk: str,
         event: InteractionEvent
     ):
+        agent_id = event.agent_id
         event_data = LlmMessageEvent(**event.event_data)
         message_id = event_data.chat_history[0].message_id
+
         if event.voice:
             sentence += chunk
             # Check for sentence-ending punctuation
             if any(p in chunk for p in [".", "?", "!"]) and len(sentence) > 10:
                 ws_payload = WsPayload(
+                    agent_id=str(agent_id),
                     message_id=str(message_id),
                     type="AUIDO",
                     data=sentence.strip()
@@ -40,6 +43,7 @@ class HandleChunk:
             return sentance
         else:
             ws_payload = WsPayload(
+                agent_id=str(agent_id),
                 message_id=str(message_id),
                 type="TEXT",
                 data=chunk

@@ -8,5 +8,6 @@ class RequestErrorBase(BaseModel):
 
 class WsPayload(BaseModel):
     message_id: Optional[str] = None
+    agent_id: Optional[str] = None
     type: str
     data: Union[str, Dict[str, Any]]
