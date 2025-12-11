@@ -35,7 +35,7 @@ class StreamLlmOutput:
             )
 
         # After streaming all chunks, send any remaining text for voice
-        if event.voice and sentence.strip():
+        if event.voice:
             self.__end_audio_stream.execute(
                 sentence=sentence,
                 event=event.model_copy()

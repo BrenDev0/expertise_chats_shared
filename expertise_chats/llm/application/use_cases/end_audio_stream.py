@@ -14,17 +14,19 @@ class EndAudioStream:
         sentence: str,
         event: InteractionEvent
     ):
-        ws_payload = WsPayload(
-            type="AUDIO",
-            data=sentence.strip()
-        )
+        if sentence != "":
 
-        event.event_data =ws_payload.model_dump()
+            ws_payload = WsPayload(
+                type="AUDIO",
+                data=sentence.strip()
+            )
 
-        self.__producer.publish(
-            routing_key=f"streaming.audio.outbound.send",
-            event_message=event
-        )
+            event.event_data =ws_payload.model_dump()
+
+            self.__producer.publish(
+                routing_key=f"streaming.audio.outbound.send",
+                event_message=event
+            )
 
         ws_payload.type = "END"
         ws_payload.data = "END STREAM"
