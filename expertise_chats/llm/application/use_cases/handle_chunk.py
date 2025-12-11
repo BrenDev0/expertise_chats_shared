@@ -28,7 +28,7 @@ class HandleChunk:
                 ws_payload = WsPayload(
                     agent_id=str(agent_id),
                     message_id=str(message_id),
-                    type="AUIDO",
+                    type="AUDIO",
                     data=sentence.strip()
                 )
 
@@ -39,8 +39,8 @@ class HandleChunk:
                     event_message=event
                 )
 
-                sentance = ""
-            return sentance
+                sentence = ""
+            return sentence
         else:
             ws_payload = WsPayload(
                 agent_id=str(agent_id),

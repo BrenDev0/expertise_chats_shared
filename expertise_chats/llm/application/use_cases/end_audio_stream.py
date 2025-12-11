@@ -15,7 +15,7 @@ class EndAudioStream:
         event: InteractionEvent
     ):
         ws_payload = WsPayload(
-            type="AUIDO",
+            type="AUDIO",
             data=sentence.strip()
         )
 

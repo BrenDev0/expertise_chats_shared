@@ -38,7 +38,7 @@ class StreamLlmOutput:
         if event.voice and sentence.strip():
             self.__end_audio_stream.execute(
                 sentence=sentence,
-                event=event
+                event=event.model_copy()
             )
 
         return "".join(chunks)
