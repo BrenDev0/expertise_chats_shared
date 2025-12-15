@@ -37,6 +37,6 @@ class EndAudioStream:
         event.event_data = ws_payload.model_dump()
 
         self.__producer.publish(
-            routing_key=f"streaming.general.outbound.send",
+            routing_key=f"streaming.audio.outbound.send",
             event_message=event
         )
